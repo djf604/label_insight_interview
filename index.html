@@ -13123,7 +13123,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Part-1-|-Data-Science">Part 1 | Data Science<a class="anchor-link" href="#Part-1-|-Data-Science">&#182;</a></h3><h4 id="1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">1) In the Least Angle Regression model (LASSO), what does the alpha parameter control?<a class="anchor-link" href="#1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">&#182;</a></h4><p>This question is a little unclear, so I'm going to explain what alpha means in two contexts. For a straight LASSO regression, I know the optimization as:</p>
+<h3 id="Part-1-|-Data-Science">Part 1 | Data Science<a class="anchor-link" href="#Part-1-|-Data-Science">&#182;</a></h3><h4 id="1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">1) In the Least Angle Regression model (LASSO), what does the alpha parameter control?<a class="anchor-link" href="#1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">&#182;</a></h4><p>I am a little unclear what this question is asking, since I have learned to call the penalty scaling parameter in a LASSO regression lambda ($\lambda$). I will explain where I see the use of the parameter alpha ($\alpha$) in two subcontexts of regularized regression.</p>
+<p>For a LASSO regression, the optimization function is normally given as:</p>
 $$\beta^* = \underset{\beta}{\text{argmin}} (\textbf{y} - \textbf{X}\beta)^T(\textbf{y} - \textbf{X}\beta) + \lambda \lVert \beta \rVert_1$$<p>In <code>scikit-learn</code>'s <code>sklearn.linear_model.Lasso</code>, the parameter $\lambda$ above is called <code>alpha=</code>, which I think is what the question means by alpha. This parameter controls the degree to which the $L_1$ norm contributes a penalty to the loss function. When $\lambda$ is $0$, regularization doesn't occur at all and optimization leads to the same result as ordinary least squares. When $\lambda &gt; 0$, the $L_1$ norm of $\beta$ contributes linearly to the penalty as $\lambda$ increases.</p>
 <p>In another context, elasticnet regularization, alpha controls the ratio of contribution between the $L_1$ and $L_2$ norms to the penalty (below is just the regularization penalty term):</p>
 $$\lambda \bigg(\frac{(1-\alpha)}{2}\lVert \beta \rVert_2^2+\alpha\lVert \beta \rVert_1\bigg), 0 \leq \alpha \leq 1$$<p>At $\alpha=1$ elasticnet preforms LASSO/$L_1$ regularization, when $\alpha=0$ elasticnet performs ridge/$L_2$ regularization, and for anything in between a mix of the two is performed.</p>
@@ -13212,7 +13213,6 @@ search &gt; message &gt; booking</p>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="k">import</span> <span class="n">train_test_split</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">confusion_matrix</span>
 
-<span class="n">DATA_PATH</span> <span class="o">=</span> <span class="s1">&#39;/home/dfitzgerald/Documents/label_insight/airbnb_session_data.txt&#39;</span>
 <span class="n">DATA_PATH</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/curran/data/gh-pages/airbnb/airbnb_session_data.txt&#39;</span>
 </pre></div>
 
@@ -13232,10 +13232,10 @@ search &gt; message &gt; booking</p>
 
 
 
-<div id="ea302b6e-274b-4187-b864-8ebee935ba69"></div>
+<div id="fa77bb9c-d01f-4f44-ab3d-b9dacdad4dcc"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ea302b6e-274b-4187-b864-8ebee935ba69');
+var element = $('#fa77bb9c-d01f-4f44-ab3d-b9dacdad4dcc');
 
 (function(root) {
   function now() {
@@ -13919,10 +13919,10 @@ Name: 0, dtype: object</pre>
 
 
 
-<div id="0c2c0765-d014-495d-b902-ec553703bbc6"></div>
+<div id="dca08c8b-1c72-4e74-81b0-9f0dcf0562e0"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0c2c0765-d014-495d-b902-ec553703bbc6');
+var element = $('#dca08c8b-1c72-4e74-81b0-9f0dcf0562e0');
 (function(root) {
   function embed_document(root) {
     
@@ -14039,10 +14039,10 @@ var element = $('#0c2c0765-d014-495d-b902-ec553703bbc6');
 
 
 
-<div id="a473804d-8acc-481c-ba0d-eb074b833ced"></div>
+<div id="35fb4e5c-3e98-4a26-b53e-2883456fdc74"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a473804d-8acc-481c-ba0d-eb074b833ced');
+var element = $('#35fb4e5c-3e98-4a26-b53e-2883456fdc74');
 (function(root) {
   function embed_document(root) {
     
@@ -14142,10 +14142,10 @@ var element = $('#a473804d-8acc-481c-ba0d-eb074b833ced');
 
 
 
-<div id="0ebcfb19-d91f-4621-8fc3-c2e1c221295b"></div>
+<div id="6422f7b1-ca3e-42e3-887b-d09fea366495"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0ebcfb19-d91f-4621-8fc3-c2e1c221295b');
+var element = $('#6422f7b1-ca3e-42e3-887b-d09fea366495');
 (function(root) {
   function embed_document(root) {
     
