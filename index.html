@@ -13123,10 +13123,10 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Part-1-|-Data-Science">Part 1 | Data Science<a class="anchor-link" href="#Part-1-|-Data-Science">&#182;</a></h3><h4 id="1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">1) In the Least Angle Regression model (LASSO), what does the alpha parameter control?<a class="anchor-link" href="#1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">&#182;</a></h4><p>I am a little unclear what this question is asking, since I have learned to call the penalty scaling parameter in a LASSO regression lambda ($\lambda$). I will explain where I see the use of the parameter alpha ($\alpha$) in two subcontexts of regularized regression.</p>
+<h3 id="Part-1-|-Data-Science">Part 1 | Data Science<a class="anchor-link" href="#Part-1-|-Data-Science">&#182;</a></h3><h4 id="1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">1) In the Least Angle Regression model (LASSO), what does the alpha parameter control?<a class="anchor-link" href="#1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">&#182;</a></h4><p>I am a little unclear what this question is asking, since I have learned to call the penalty scaling parameter in a LASSO regression lambda ($\lambda$). In <code>scikit-learn</code>'s <code>sklearn.linear_model.Lasso</code>, the scaling parameter is called <code>alpha=</code>, which I think is what the question means by alpha.</p>
 <p>For a LASSO regression, the optimization function is normally given as:</p>
-$$\beta^* = \underset{\beta}{\text{argmin}} (\textbf{y} - \textbf{X}\beta)^T(\textbf{y} - \textbf{X}\beta) + \lambda \lVert \beta \rVert_1$$<p>In <code>scikit-learn</code>'s <code>sklearn.linear_model.Lasso</code>, the parameter $\lambda$ above is called <code>alpha=</code>, which I think is what the question means by alpha. This parameter controls the degree to which the $L_1$ norm contributes a penalty to the loss function. When $\lambda$ is $0$, regularization doesn't occur at all and optimization leads to the same result as ordinary least squares. When $\lambda &gt; 0$, the $L_1$ norm of $\beta$ contributes linearly to the penalty as $\lambda$ increases.</p>
-<p>In another context, elasticnet regularization, alpha controls the ratio of contribution between the $L_1$ and $L_2$ norms to the penalty (below is just the regularization penalty term):</p>
+$$\beta^* = \underset{\beta}{\text{argmin}} (\textbf{y} - \textbf{X}\beta)^T(\textbf{y} - \textbf{X}\beta) + \lambda \lVert \beta \rVert_1$$<p>The lambda ($\lambda$) parameter above controls the degree to which the $L_1$ norm contributes a penalty to the loss function. When $\lambda$ is $0$, regularization doesn't occur at all and optimization leads to the same result as ordinary least squares. When $\lambda &gt; 0$, the $L_1$ norm of $\beta$ contributes linearly to the penalty as $\lambda$ increases.</p>
+<p>If the above context and assumption about alpha are incorrect, I will explain another context where an alpha parameter is used: elasticnet regularization. In this context, alpha controls the ratio of contribution between the $L_1$ and $L_2$ norms to the penalty (below is only the regularization penalty term):</p>
 $$\lambda \bigg(\frac{(1-\alpha)}{2}\lVert \beta \rVert_2^2+\alpha\lVert \beta \rVert_1\bigg), 0 \leq \alpha \leq 1$$<p>At $\alpha=1$ elasticnet preforms LASSO/$L_1$ regularization, when $\alpha=0$ elasticnet performs ridge/$L_2$ regularization, and for anything in between a mix of the two is performed.</p>
 <h4 id="2)-Is-more-data-always-better?">2) Is more data always better?<a class="anchor-link" href="#2)-Is-more-data-always-better?">&#182;</a></h4><p>It depends on whether more data means more features or more data points.</p>
 <p>When it comes to more features, more is not necessarily always better. Complex models with many features are more easily prone to overfitting, where the model starts to model noise and as such doesn't generalize well to future unseen data. As another example, the usefulness of PCA degrades if the number of features is greater than the number of samples.</p>
@@ -13232,10 +13232,10 @@ search &gt; message &gt; booking</p>
 
 
 
-<div id="fa77bb9c-d01f-4f44-ab3d-b9dacdad4dcc"></div>
+<div id="4da83342-ff6b-4566-9496-d5a0722b0847"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#fa77bb9c-d01f-4f44-ab3d-b9dacdad4dcc');
+var element = $('#4da83342-ff6b-4566-9496-d5a0722b0847');
 
 (function(root) {
   function now() {
@@ -13919,10 +13919,10 @@ Name: 0, dtype: object</pre>
 
 
 
-<div id="dca08c8b-1c72-4e74-81b0-9f0dcf0562e0"></div>
+<div id="141b7f1f-a9e3-4efa-8a28-f2d1d9e5a036"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#dca08c8b-1c72-4e74-81b0-9f0dcf0562e0');
+var element = $('#141b7f1f-a9e3-4efa-8a28-f2d1d9e5a036');
 (function(root) {
   function embed_document(root) {
     
@@ -14039,10 +14039,10 @@ var element = $('#dca08c8b-1c72-4e74-81b0-9f0dcf0562e0');
 
 
 
-<div id="35fb4e5c-3e98-4a26-b53e-2883456fdc74"></div>
+<div id="1d61ea2e-b6ab-4ac3-b441-fde5cd972451"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#35fb4e5c-3e98-4a26-b53e-2883456fdc74');
+var element = $('#1d61ea2e-b6ab-4ac3-b441-fde5cd972451');
 (function(root) {
   function embed_document(root) {
     
@@ -14142,10 +14142,10 @@ var element = $('#35fb4e5c-3e98-4a26-b53e-2883456fdc74');
 
 
 
-<div id="6422f7b1-ca3e-42e3-887b-d09fea366495"></div>
+<div id="bac8661a-0dcb-45a3-8ece-ae0601ad69a0"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#6422f7b1-ca3e-42e3-887b-d09fea366495');
+var element = $('#bac8661a-0dcb-45a3-8ece-ae0601ad69a0');
 (function(root) {
   function embed_document(root) {
     
