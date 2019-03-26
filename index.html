@@ -13123,7 +13123,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Part-1-|-Data-Science">Part 1 | Data Science<a class="anchor-link" href="#Part-1-|-Data-Science">&#182;</a></h3><h4 id="1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">1) In the Least Angle Regression model (LASSO), what does the alpha parameter control?<a class="anchor-link" href="#1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">&#182;</a></h4><p>I am a little unclear what this question is asking, since I have learned to call the penalty scaling parameter in a LASSO regression lambda ($\lambda$). In <code>scikit-learn</code>'s <code>sklearn.linear_model.Lasso</code>, the scaling parameter is a function parameter called <code>alpha=</code>, which I think is what the question means by alpha.</p>
+<h3 id="Part-1-|-Data-Science">Part 1 | Data Science<a class="anchor-link" href="#Part-1-|-Data-Science">&#182;</a></h3><h4 id="1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">1) In the Least Angle Regression model (LASSO), what does the alpha parameter control?<a class="anchor-link" href="#1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">&#182;</a></h4><p>I am a little unsure what this question is asking, since I have learned to call the penalty scaling parameter in a LASSO regression lambda ($\lambda$). In <code>scikit-learn</code>'s <code>sklearn.linear_model.Lasso</code>, the scaling parameter is a function parameter called <code>alpha=</code>, which I think is what the question means by alpha.</p>
 <p>For a LASSO regression, the optimization function is normally given as:</p>
 $$\beta^* = \underset{\beta}{\text{argmin}} (\textbf{y} - \textbf{X}\beta)^T(\textbf{y} - \textbf{X}\beta) + \lambda \lVert \beta \rVert_1$$<p>The lambda ($\lambda$) parameter above controls the degree to which the $L_1$ norm contributes a penalty to the loss function. When $\lambda$ is $0$, regularization doesn't occur at all and optimization leads to the same result as ordinary least squares. When $\lambda &gt; 0$, the $L_1$ norm of $\beta$ contributes linearly to the penalty as $\lambda$ increases.</p>
 <p>If the above context and assumption about alpha are incorrect, I will explain another context where an alpha parameter is used: elasticnet regularization. In this context, alpha controls the ratio of contribution between the $L_1$ and $L_2$ norms to the penalty (below is only the regularization penalty term):</p>
@@ -13183,21 +13183,6 @@ $$\hat{\mu}_{b,j} = \frac{1}{B} \sum_b{x_{b, j}}$$$$\hat{\sigma}_{b,j} = \sqrt{\
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Notes">Notes<a class="anchor-link" href="#Notes">&#182;</a></h4><p>I can plot activity per month</p>
-<p>It looks like March, April, May, June have depressed activity. Let's see if we can figure out why.</p>
-<p>Does an activity in one session lead to another activity in subsequent sessions?</p>
-<p>search &gt; message
-search &gt; booking
-message &gt; booking
-search &gt; message &gt; booking</p>
-<p>I need to show that I understand most of the target labels are zero, and only a small percentage are 1s. I understand this is a difficult prediction problem because we can get ~98% accuracy by just always predicting 0. I need to show a class confusion matrix to show that the predictor is at least trying to make a real prediction and not just guess all 0. That means our importance scores have actual interpretive value.</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
@@ -13233,10 +13218,10 @@ search &gt; message &gt; booking</p>
 
 
 
-<div id="10f727ff-2b25-49bc-beda-f524c11dd3ce"></div>
+<div id="36d4bc5b-d265-453c-a4f1-ba920d106cb8"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#10f727ff-2b25-49bc-beda-f524c11dd3ce');
+var element = $('#36d4bc5b-d265-453c-a4f1-ba920d106cb8');
 
 (function(root) {
   function now() {
@@ -13927,10 +13912,10 @@ Name: 0, dtype: object</pre>
 
 
 
-<div id="b8728a9e-69bb-469b-89dc-acca09679adb"></div>
+<div id="4091ccfc-783f-484c-bf81-34b847718461"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b8728a9e-69bb-469b-89dc-acca09679adb');
+var element = $('#4091ccfc-783f-484c-bf81-34b847718461');
 (function(root) {
   function embed_document(root) {
     
@@ -14047,10 +14032,10 @@ var element = $('#b8728a9e-69bb-469b-89dc-acca09679adb');
 
 
 
-<div id="c1a2d6df-9c4c-49da-b1a7-c6090e5c1c31"></div>
+<div id="10424f24-5f61-4d02-964e-16f39ba50c1d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c1a2d6df-9c4c-49da-b1a7-c6090e5c1c31');
+var element = $('#10424f24-5f61-4d02-964e-16f39ba50c1d');
 (function(root) {
   function embed_document(root) {
     
@@ -14152,10 +14137,10 @@ var element = $('#c1a2d6df-9c4c-49da-b1a7-c6090e5c1c31');
 
 
 
-<div id="e3e79c65-7d84-4e48-beb1-f2fc9209315e"></div>
+<div id="af67925d-4f24-4552-a666-ff9adb277be3"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e3e79c65-7d84-4e48-beb1-f2fc9209315e');
+var element = $('#af67925d-4f24-4552-a666-ff9adb277be3');
 (function(root) {
   function embed_document(root) {
     
