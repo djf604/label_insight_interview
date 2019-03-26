@@ -13116,17 +13116,17 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Dominic-Fizgerald">Dominic Fizgerald<a class="anchor-link" href="#Dominic-Fizgerald">&#182;</a></h1><h1 id="Senior-Data-Scientist-Candidate-|-Label-Insight">Senior Data Scientist Candidate | Label Insight<a class="anchor-link" href="#Senior-Data-Scientist-Candidate-|-Label-Insight">&#182;</a></h1><h2 id="Interview-Questions">Interview Questions<a class="anchor-link" href="#Interview-Questions">&#182;</a></h2>
+<h1 id="Dominic-Fitzgerald">Dominic Fitzgerald<a class="anchor-link" href="#Dominic-Fitzgerald">&#182;</a></h1><h1 id="Senior-Data-Scientist-Candidate-|-Label-Insight">Senior Data Scientist Candidate | Label Insight<a class="anchor-link" href="#Senior-Data-Scientist-Candidate-|-Label-Insight">&#182;</a></h1><h2 id="Interview-Questions">Interview Questions<a class="anchor-link" href="#Interview-Questions">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Part-1-|-Data-Science">Part 1 | Data Science<a class="anchor-link" href="#Part-1-|-Data-Science">&#182;</a></h3><h4 id="1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">1) In the Least Angle Regression model (LASSO), what does the alpha parameter control?<a class="anchor-link" href="#1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">&#182;</a></h4><p>I am a little unsure what this question is asking, since I have learned to call the penalty scaling parameter in a LASSO regression lambda ($\lambda$). In <code>scikit-learn</code>'s <code>sklearn.linear_model.Lasso</code>, the scaling parameter is a function parameter called <code>alpha=</code>, which I think is what the question means by alpha.</p>
+<h3 id="Part-1-|-Data-Science">Part 1 | Data Science<a class="anchor-link" href="#Part-1-|-Data-Science">&#182;</a></h3><h4 id="1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">1) In the Least Angle Regression model (LASSO), what does the alpha parameter control?<a class="anchor-link" href="#1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">&#182;</a></h4><p>In most contexts I have seen the LASSO regularization I have learned to call the penalty scaling parameteter lambda ($\lambda$). In <code>scikit-learn</code>'s <code>sklearn.linear_model.Lasso</code>, the scaling parameter is a function parameter called <code>alpha=</code>, which I think is what the question means by alpha.</p>
 <p>For a LASSO regression, the optimization function is normally given as:</p>
 $$\beta^* = \underset{\beta}{\text{argmin}} (\textbf{y} - \textbf{X}\beta)^T(\textbf{y} - \textbf{X}\beta) + \lambda \lVert \beta \rVert_1$$<p>The lambda ($\lambda$) parameter above controls the degree to which the $L_1$ norm contributes a penalty to the loss function. When $\lambda$ is $0$, regularization doesn't occur at all and optimization leads to the same result as ordinary least squares. When $\lambda &gt; 0$, the $L_1$ norm of $\beta$ contributes linearly to the penalty as $\lambda$ increases.</p>
-<p>If the above context and assumption about alpha are incorrect, I will explain another context where an alpha parameter is used: elasticnet regularization. In this context, alpha controls the ratio of contribution between the $L_1$ and $L_2$ norms to the penalty (below is only the regularization penalty term):</p>
+<p>If the above assumption about alpha being the penalty scaling parameter in LASSO are incorrect, I will explain another context where an alpha parameter is used: elasticnet regularization. In this context, alpha controls the ratio of contribution between the $L_1$ and $L_2$ norms to the penalty (below is only the regularization penalty term):</p>
 $$\lambda \bigg(\frac{(1-\alpha)}{2}\lVert \beta \rVert_2^2+\alpha\lVert \beta \rVert_1\bigg), 0 \leq \alpha \leq 1$$<p>At $\alpha=1$ elasticnet preforms LASSO/$L_1$ regularization, when $\alpha=0$ elasticnet performs ridge/$L_2$ regularization, and for anything in between a mix of the two is performed.</p>
 <h4 id="2)-Is-more-data-always-better?">2) Is more data always better?<a class="anchor-link" href="#2)-Is-more-data-always-better?">&#182;</a></h4><p>It depends on whether more data means more features or more data points.</p>
 <p>When it comes to more features, more is not necessarily always better. Complex models with many features are more easily prone to overfitting, where the model starts to model noise and as such does not generalize well to future unseen data. As another example, the usefulness of PCA degrades if the number of features is greater than the number of samples.</p>
@@ -13218,10 +13218,10 @@ $$\hat{\mu}_{b,j} = \frac{1}{B} \sum_b{x_{b, j}}$$$$\hat{\sigma}_{b,j} = \sqrt{\
 
 
 
-<div id="36d4bc5b-d265-453c-a4f1-ba920d106cb8"></div>
+<div id="a87d3f8a-d024-4136-a6ad-a83c10fea765"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#36d4bc5b-d265-453c-a4f1-ba920d106cb8');
+var element = $('#a87d3f8a-d024-4136-a6ad-a83c10fea765');
 
 (function(root) {
   function now() {
@@ -13912,10 +13912,10 @@ Name: 0, dtype: object</pre>
 
 
 
-<div id="4091ccfc-783f-484c-bf81-34b847718461"></div>
+<div id="9439b78c-0ae6-4d1e-9ae3-c4ad15ff30ca"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4091ccfc-783f-484c-bf81-34b847718461');
+var element = $('#9439b78c-0ae6-4d1e-9ae3-c4ad15ff30ca');
 (function(root) {
   function embed_document(root) {
     
@@ -14032,10 +14032,10 @@ var element = $('#4091ccfc-783f-484c-bf81-34b847718461');
 
 
 
-<div id="10424f24-5f61-4d02-964e-16f39ba50c1d"></div>
+<div id="f10e7885-7e94-4c55-8af1-2a475469e607"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#10424f24-5f61-4d02-964e-16f39ba50c1d');
+var element = $('#f10e7885-7e94-4c55-8af1-2a475469e607');
 (function(root) {
   function embed_document(root) {
     
@@ -14137,10 +14137,10 @@ var element = $('#10424f24-5f61-4d02-964e-16f39ba50c1d');
 
 
 
-<div id="af67925d-4f24-4552-a666-ff9adb277be3"></div>
+<div id="038f09b5-e004-49b6-a361-51bfa9262df6"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#af67925d-4f24-4552-a666-ff9adb277be3');
+var element = $('#038f09b5-e004-49b6-a361-51bfa9262df6');
 (function(root) {
   function embed_document(root) {
     
