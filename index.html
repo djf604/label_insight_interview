@@ -13126,9 +13126,9 @@ div#notebook {
 <h3 id="Part-1-|-Data-Science">Part 1 | Data Science<a class="anchor-link" href="#Part-1-|-Data-Science">&#182;</a></h3><h4 id="1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">1) In the Least Angle Regression model (LASSO), what does the alpha parameter control?<a class="anchor-link" href="#1)-In-the-Least-Angle-Regression-model-(LASSO),-what-does-the-alpha-parameter-control?">&#182;</a></h4><p>In most contexts I have seen the LASSO regularization I have learned to call the penalty scaling parameteter lambda ($\lambda$). In <code>scikit-learn</code>'s <code>sklearn.linear_model.Lasso</code>, the scaling parameter is a function parameter called <code>alpha=</code>, which I think is what the question means by alpha.</p>
 <p>For a LASSO regression, the optimization function is normally given as:</p>
 $$\beta^* = \underset{\beta}{\text{argmin}} (\textbf{y} - \textbf{X}\beta)^T(\textbf{y} - \textbf{X}\beta) + \lambda \lVert \beta \rVert_1$$<p>The lambda ($\lambda$) parameter above controls the degree to which the $L_1$ norm contributes a penalty to the loss function. When $\lambda$ is $0$, regularization doesn't occur at all and optimization leads to the same result as ordinary least squares. When $\lambda &gt; 0$, the $L_1$ norm of $\beta$ contributes linearly to the penalty as $\lambda$ increases.</p>
-<p>If the above assumption about alpha being the penalty scaling parameter in LASSO are incorrect, I will explain another context where an alpha parameter is used: elasticnet regularization. In this context, alpha controls the ratio of contribution between the $L_1$ and $L_2$ norms to the penalty (below is only the regularization penalty term):</p>
+<p>If the above assumption about alpha being the penalty scaling parameter in LASSO is incorrect, I will explain another context where an alpha parameter is used: elasticnet regularization. In this context, alpha controls the ratio of contribution between the $L_1$ and $L_2$ norms to the penalty (below is only the regularization penalty term):</p>
 $$\lambda \bigg(\frac{(1-\alpha)}{2}\lVert \beta \rVert_2^2+\alpha\lVert \beta \rVert_1\bigg), 0 \leq \alpha \leq 1$$<p>At $\alpha=1$ elasticnet preforms LASSO/$L_1$ regularization, when $\alpha=0$ elasticnet performs ridge/$L_2$ regularization, and for anything in between a mix of the two is performed.</p>
-<h4 id="2)-Is-more-data-always-better?">2) Is more data always better?<a class="anchor-link" href="#2)-Is-more-data-always-better?">&#182;</a></h4><p>It depends on whether more data means more features or more data points.</p>
+<h4 id="2)-Is-more-data-always-better?">2) Is more data always better?<a class="anchor-link" href="#2)-Is-more-data-always-better?">&#182;</a></h4><p>More data can be better or worse depending on the architecture of the model being trained.</p>
 <p>When it comes to more features, more is not necessarily always better. Complex models with many features are more easily prone to overfitting, where the model starts to model noise and as such does not generalize well to future unseen data. As another example, the usefulness of PCA degrades if the number of features is greater than the number of samples.</p>
 <p>As for more data points, most of the time this is desirable. More data often leads to a better fit provided appropriate precautions are taken to avoid overfitting. However, when a model is already prone to overfitting because of low bias/high variance, having more data points can actually contribute to the overfit. This is reflected in the calculation of Bayes' Information Criterion (BIC):</p>
 $$\text{BIC}=2k\:\text{log}N-2\textbf{L}$$<p>where $k$ is the number of features in the model, $N$ is the number of data points, and $\textbf{L}$ is the likelihood of the model. Since a lower BIC means a better model, a higher value of $N$ contributes to a worse score for the model.</p>
@@ -13165,10 +13165,9 @@ $$\text{P}(A|C) = \frac{1}{6}$$
 <h3 id="Part-3-|-Deep-Learning">Part 3 | Deep Learning<a class="anchor-link" href="#Part-3-|-Deep-Learning">&#182;</a></h3><h4 id="1)-How-vanishing-gradient-can-be-solved?">1) How vanishing gradient can be solved?<a class="anchor-link" href="#1)-How-vanishing-gradient-can-be-solved?">&#182;</a></h4><p>There are many different ways to mitigate a vanishing or exploding gradient. One way is to initialize network parameter values by sampling from a uniform distribution on the interval $\bigg(-\sqrt{\frac{3}{N}}, \sqrt{\frac{3}{N}}\bigg)$ where $N$ is the number of units in the layer above or the input layer. This is called Xaxier initialization.</p>
 <p>Another method is called batch normalization. This is a layer in a deep network that re-scales outputs from the previous layer to have zero mean and unit variance:</p>
 $$\hat{\mu}_{b,j} = \frac{1}{B} \sum_b{x_{b, j}}$$$$\hat{\sigma}_{b,j} = \sqrt{\frac{1}{B - 1}\sum_b{(x_{b,j} - \hat{\mu}_{b,j})^2}}$$$$\tilde{x}_{b,j} = \frac{x_{b,j} - \hat{\mu}_{b,j}}{\hat{\sigma}_{b,j}}$$<p>where $b$ is the index of a batch, $B$ is the number of samples in the batch, $j$ is index of a feature, $\hat{\mu}$ is the batch mean, $\hat{\sigma}$ is the batch standard deviation, and $\tilde{x}_j$ is the batch normalized new value of a given sample's $j$th feature.</p>
-<h4 id="2)-Explain-batch-gradient-descent,-stochastic-gradient-descent,-and-mini-match.">2) Explain batch gradient descent, stochastic gradient descent, and mini-match.<a class="anchor-link" href="#2)-Explain-batch-gradient-descent,-stochastic-gradient-descent,-and-mini-match.">&#182;</a></h4><p>The question says "mini-match", but I will assume this is a typo that meant to say mini-batch.</p>
-<p>Batch gradient descent calculates the gradient using all training samples. The update happens only once at the end of each training epoch, which can lead to slow learning since updates to weights happen relatively rarely. However, it can be useful if the gradient is largely convex and the network does not need to attempt to jump out of any local minima.</p>
+<h4 id="2)-Explain-batch-gradient-descent,-stochastic-gradient-descent,-and-mini-match.">2) Explain batch gradient descent, stochastic gradient descent, and mini-match.<a class="anchor-link" href="#2)-Explain-batch-gradient-descent,-stochastic-gradient-descent,-and-mini-match.">&#182;</a></h4><p>Batch gradient descent calculates the gradient using all training samples. The update happens only once at the end of each training epoch, which can lead to slow learning since updates to weights happen relatively rarely. However, it can be useful if the gradient is largely convex and the network does not need to attempt to jump out of any local minima.</p>
 <p>Stochastic gradient descent calculates the gradient using a single training sample. The updates happen after every forward pass through the network of a sample, which provides for very frequent updates but an inaccurate gradient. The high-error stochastic nature of the gradient can actually help the network jump out of local minima, should they exist.</p>
-<p>Mini-batch gradient descent adds a hyperparameter called batch size. Let $s$ be the batch size. The gradient is calculated using the sum of the gradients from $s$ samples after $s$ forward passes through the network. Updates happen more frequently than batch gradient descent but less then stochastic gradient descent. This is the gradient descent method that is generally used in practice today.</p>
+<p>Assumming the question meant to say mini-batch, mini-batch gradient descent adds a hyperparameter called batch size. Let $s$ be the batch size. The gradient is calculated using the sum of the gradients from $s$ samples after $s$ forward passes through the network. Updates happen more frequently than batch gradient descent but less then stochastic gradient descent. This is the gradient descent method that is generally used in practice today.</p>
 <h4 id="3)-What-is-the-difference-between-Transfer-Learning-and-Fine-tuning?">3) What is the difference between Transfer Learning and Fine-tuning?<a class="anchor-link" href="#3)-What-is-the-difference-between-Transfer-Learning-and-Fine-tuning?">&#182;</a></h4><p>Transfer learning is when a network is pre-trained on a general dataset, such as ImageNet, then repurposed for a specific purpose. This is often done by chopping off the last layer of softmax units and replacing it with a softmax corresponding to the number of classes in the new input set.</p>
 <p>Fine-tuning uses a pre-trained network as a base in a way similar to transfer learning, but then employs some level of further backpropagation using the new input data to tune the weights. Sometimes only some layers will be fine-tuned to prevent overfitting in the early layers. A small learning rate is often used to avoid dramatically perturbing the weights since we do not want the network to move <em>too</em> far away from the pre-trained weights.</p>
 
@@ -13218,10 +13217,10 @@ $$\hat{\mu}_{b,j} = \frac{1}{B} \sum_b{x_{b, j}}$$$$\hat{\sigma}_{b,j} = \sqrt{\
 
 
 
-<div id="a87d3f8a-d024-4136-a6ad-a83c10fea765"></div>
+<div id="c3092562-006f-495f-bb68-dc545c0abbcb"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a87d3f8a-d024-4136-a6ad-a83c10fea765');
+var element = $('#c3092562-006f-495f-bb68-dc545c0abbcb');
 
 (function(root) {
   function now() {
@@ -13912,10 +13911,10 @@ Name: 0, dtype: object</pre>
 
 
 
-<div id="9439b78c-0ae6-4d1e-9ae3-c4ad15ff30ca"></div>
+<div id="91135b5e-35fd-441d-b8b9-455039b21128"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9439b78c-0ae6-4d1e-9ae3-c4ad15ff30ca');
+var element = $('#91135b5e-35fd-441d-b8b9-455039b21128');
 (function(root) {
   function embed_document(root) {
     
@@ -14032,10 +14031,10 @@ var element = $('#9439b78c-0ae6-4d1e-9ae3-c4ad15ff30ca');
 
 
 
-<div id="f10e7885-7e94-4c55-8af1-2a475469e607"></div>
+<div id="5e116ffc-7283-427f-9a94-5b7ed22cc4f3"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f10e7885-7e94-4c55-8af1-2a475469e607');
+var element = $('#5e116ffc-7283-427f-9a94-5b7ed22cc4f3');
 (function(root) {
   function embed_document(root) {
     
@@ -14137,10 +14136,10 @@ var element = $('#f10e7885-7e94-4c55-8af1-2a475469e607');
 
 
 
-<div id="038f09b5-e004-49b6-a361-51bfa9262df6"></div>
+<div id="49ed8ae8-c241-434d-981a-2f82ec279072"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#038f09b5-e004-49b6-a361-51bfa9262df6');
+var element = $('#49ed8ae8-c241-434d-981a-2f82ec279072');
 (function(root) {
   function embed_document(root) {
     
